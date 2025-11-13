@@ -17,8 +17,10 @@ def play_game():
             print("Please enter a whole number between 1 and 100.")
             continue
 
-        guess = int(guess_input)
-        attempts += 1
+        # check that guess is in the correct range
+        if guess < 1 or guess > 100:
+            print("Your guess must be between 1 and 100.")
+            continue
 
         if guess < secret_number:
             print("Too low!")
