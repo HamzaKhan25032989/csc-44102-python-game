@@ -5,6 +5,7 @@ import random
 def play_game():
     print("Welcome to the Guess the Number game!")
     print("I am thinking of a number between 1 and 100.")
+    print("You have a maximum of 10 attempts.")
 
     secret_number = random.randint(1, 100)
     attempts = 0
@@ -17,10 +18,19 @@ def play_game():
             print("Please enter a whole number between 1 and 100.")
             continue
 
+        guess = int(guess_input)
+        attempts += 1
+
         # check that guess is in the correct range
         if guess < 1 or guess > 100:
             print("Your guess must be between 1 and 100.")
             continue
+
+        # check if player ran out of attempts
+        if attempts == 10 and not guessed:
+            print("You have used all 10 attempts. Game over!")
+            print("The correct number was:", secret_number)
+            break
 
         if guess < secret_number:
             print("Too low!")
@@ -37,9 +47,6 @@ def main():
         play_again = input("Play again? (y/n): ")
 
     print("Thanks for playing the game!")
-
-        
-        
 
 if __name__ == "__main__":
     main()
