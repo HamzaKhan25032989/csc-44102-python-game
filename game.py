@@ -36,5 +36,10 @@ def main():
         play_game()
         play_again = input("Play again? (y/n): ")
 
+    print("Thanks for playing the game!")
+
+        
+        
+
 if __name__ == "__main__":
     main()
