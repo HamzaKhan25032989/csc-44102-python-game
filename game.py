@@ -27,10 +27,12 @@ def play_game():
             continue
 
         # check if player ran out of attempts
-        if attempts == 10 and not guessed:
+               # check if player ran out of attempts
+        if attempts == 10 and guess != secret_number:
             print("You have used all 10 attempts. Game over!")
             print("The correct number was:", secret_number)
             break
+
 
         if guess < secret_number:
             print("Too low!")
