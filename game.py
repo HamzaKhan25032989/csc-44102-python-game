@@ -14,7 +14,7 @@ def play_game():
         guess_input = input("Enter your guess: ")
 
         if not guess_input.isdigit():
-            print("Please enter a number.")
+            print("Please enter a whole number between 1 and 100.")
             continue
 
         guess = int(guess_input)
